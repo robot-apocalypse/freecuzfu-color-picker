@@ -186,3 +186,21 @@ html, body {
   color: var(--accent);
   border-color: var(--accent);
 }
+
+.github-link {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.5rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.github-link:hover {
+  color: var(--text);
+}
