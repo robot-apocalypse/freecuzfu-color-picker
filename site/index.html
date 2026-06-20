@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Color Picker">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+  <link rel="stylesheet" href="/style.css">
+  <style>:root { --accent: #ec4899; }</style>
+  <title>Color Picker — FreeCuzFU</title>
+</head>
+<body>
+
+  <a href="https://freecuzfu.com" class="back-link">← FreeCuzFU</a>
+  <button id="install-btn" aria-label="Install app" hidden>↓ Install</button>
+
+  <main id="app">
+    <div id="swatch"></div>
+    <input type="color" id="color-input" value="#ec4899" aria-label="Pick a color">
+
+    <div class="formats">
+      <div class="format-row">
+        <label>HEX</label>
+        <input type="text" id="hex" spellcheck="false" autocomplete="off">
+        <button data-for="hex">Copy</button>
+      </div>
+      <div class="format-row">
+        <label>RGB</label>
+        <input type="text" id="rgb" spellcheck="false" autocomplete="off">
+        <button data-for="rgb">Copy</button>
+      </div>
+      <div class="format-row">
+        <label>HSL</label>
+        <input type="text" id="hsl" spellcheck="false" autocomplete="off">
+        <button data-for="hsl">Copy</button>
+      </div>
+      <div class="format-row">
+        <label>CMYK</label>
+        <input type="text" id="cmyk" spellcheck="false" autocomplete="off">
+        <button data-for="cmyk">Copy</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
